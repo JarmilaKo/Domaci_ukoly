@@ -19,7 +19,7 @@ df_tested_pivot = df_tested.pivot_table(values="Survived",
                                         aggfunc=len,
                                         margins=True)
 print(df_tested_pivot)
-
+print("Dekuji, Rado")
 london_merged = pd.read_csv("london_merged.csv")
 london_merged["timestamp"] = pd.to_datetime(london_merged["timestamp"])
 london_merged["year"] = london_merged["timestamp"].dt.year
