@@ -16,7 +16,7 @@ beton = pd.read_csv("Concrete_Data_Yeh.csv")
 print(beton.corr())
 
 # mod = smf.ols(formula="csMPa ~ cement + slag + flyash + water + superplasticizer + age + coarseaggregate +"
-#                      "fineaggregate", data=beton)
+#                       "fineaggregate", data=beton)
 mod = smf.ols(formula="csMPa ~ cement + slag + flyash + water + superplasticizer + age", data=beton)
 res = mod.fit()
 print(res.summary())
@@ -44,5 +44,5 @@ seaborn.distplot(beton["csMPa"], fit=norm, ax=axs[0, 0]).set_title("Porovnání 
 # seaborn.displot(data=beton, x="csMPa", kind="hist", ax=axs[0, 0], kde=True)
 seaborn.distplot(beton["csMPa"], fit=lognorm, ax=axs[0, 1]).set_title("Porovnání s lognormální distribucí")
 seaborn.distplot(np.log(beton["csMPa"]), fit=norm, ax=axs[1, 0]).set_title("Log transformovaná data")
-axs[1, 1] = beton.plot.scatter(x="csMPa", y="cement", title="Scatter")
+beton.plot.scatter(x="csMPa", y="cement", title="Scatter", ax=axs[1, 1])
 plt.show()

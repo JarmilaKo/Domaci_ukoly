@@ -19,8 +19,6 @@ mod = smf.ols(formula="Weight ~ Length2 + Height + avg_species_weight", data=fis
 res = mod.fit()
 print(res.summary())
 
-# co znamená ten negativní koeficient u průměrné váhy druhu?
-
 # fig, (ax1, ax2) = plt.subplots(1, 2)
 # fish.plot.scatter(x="Weight", y="avg_species_weight", ax=ax1)
 # fish.plot.scatter(x="Length2", y="avg_species_weight", ax=ax2)
